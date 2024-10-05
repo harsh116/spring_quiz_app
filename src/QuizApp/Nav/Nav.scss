@@ -1,0 +1,96 @@
+@import "../config";
+
+.Navbar {
+  background-color: $navColor;
+  padding: 1rem 0.5rem;
+}
+
+.Admin.NavBar {
+  //   height: 50px;
+  background-color: $navColor;
+  padding: 1rem 0.5rem;
+  display: flex;
+  //   justify-content: center;
+  align-items: center;
+
+  .col1 {
+    display: flex;
+  }
+}
+
+.Admin.NavBar .message,
+.User.NavBar .message {
+  color: $dimwhite;
+  margin-left: 1rem;
+}
+
+.Admin.NavBar .NavBtn,
+.User.NavBar .NavBtn {
+  margin: 0 0.5rem;
+  button {
+    font-size: 0.9rem;
+    text-align: left;
+    border: none;
+    color: $dimwhite;
+
+    background-color: transparent;
+    cursor: pointer;
+
+    &.active {
+      color: white;
+      font-size: 1rem;
+    }
+  }
+
+  &.special {
+    button {
+      color: white;
+      border-radius: 2px;
+      border: 1px solid white;
+      padding: 0.5rem 1rem;
+      //   outline: none;
+    }
+  }
+}
+
+@include media-xs-500 {
+  .Admin.NavBar {
+    display: block;
+
+    .col2 {
+      margin-top: 1rem;
+    }
+
+    .NavBtn {
+      margin: 0;
+      button {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+// ---------------
+// -----------------
+
+.User.NavBar {
+  background-color: $navColor;
+  padding: 1rem 0.5rem;
+
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+
+  .col1,
+  .col2 {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  .heading {
+    color: white;
+    padding: 0 0.5rem;
+    margin: 0;
+  }
+}

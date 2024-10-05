@@ -1,0 +1,21 @@
+@import "config";
+
+@mixin inputDim {
+  outline: none;
+  border: 1px solid $dimwhite;
+  border-radius: 3px;
+}
+
+@mixin selectDim {
+  outline: none;
+  background: none;
+  appearance: none;
+}
+
+@mixin buttonDim {
+  cursor: pointer;
+
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+}

@@ -1,0 +1,94 @@
+@import "../../config";
+@import "../../helpers";
+
+// .OverlayContainer {
+//   position: absolute;
+//   width: 100vw;
+//   min-height: 100vh;
+// }
+
+.Overlay {
+  // to overlay over all others
+  z-index: 10;
+  display: flex;
+  position: fixed;
+  //   position: absolute;
+  top: 0;
+  //   position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100%;
+  //   height: 100vh;
+  //   min-height: fit-content;
+  //   height: min(100vh, fit-content);
+  background-color: rgba($color: #000000, $alpha: 0.8);
+
+  .OverlayBox {
+    // when height is too so reducing its height to make it scrollable. has issues but best workaround
+    max-height: 100vh;
+    overflow-y: auto;
+    // justify-content: center;
+    // align-items: center;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+    width: 300px;
+    aspect-ratio: 2/1;
+    // position: fixed;
+    // position: absolute;
+    position: relative;
+
+    // inset: 0;
+
+    margin: auto;
+    padding: 0.5rem;
+    border: 10px solid grey;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba($color: white, $alpha: 0.2);
+
+    .message {
+      color: $navColor;
+    }
+
+    .actionSection {
+      //   position: absolute;
+      position: relative;
+      width: 100%;
+      display: flex;
+      //   bottom: 0;
+      //   right: 1rem;
+      flex: 1;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      .ok,
+      .cancel {
+        margin: 0.3rem;
+
+        button {
+          @include buttonDim;
+          padding: 0.4rem;
+          width: 4rem;
+        }
+      }
+
+      .ok button:hover {
+        background-color: $correct-ans-color;
+      }
+
+      .cancel button:hover {
+        background-color: $wrong-ans-color;
+      }
+    }
+  }
+}
+
+@include media-xs-400-height {
+  .Overlay {
+    .OverlayBox {
+      //   max-width: 300px;
+    }
+  }
+}

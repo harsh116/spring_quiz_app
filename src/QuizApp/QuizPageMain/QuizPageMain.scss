@@ -1,0 +1,81 @@
+@import "../config";
+@import "../helpers";
+
+.QuizPageMain {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
+}
+
+.QuizPageMain_Section {
+  width: 70%;
+  margin: 1rem 0;
+  //   min-width: 400px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .technologyname {
+    margin: 2rem 0;
+    select {
+      width: 320px;
+      padding: 0.5rem;
+      @include selectDim;
+    }
+  }
+
+  .questionList {
+    width: 100%;
+    background-color: whitesmoke;
+
+    .questionBox {
+      background-color: rgba($color: grey, $alpha: 0.1);
+      border-radius: 3px;
+      margin: 1rem 2rem;
+      padding: 1rem;
+
+      .question {
+        font-size: 1.1rem;
+        margin: 1rem 0;
+      }
+
+      .options {
+        .option {
+          display: flex;
+          //   flex-wrap: wrap;
+          margin: 0.2rem 0;
+
+          input {
+            margin: 0;
+            margin-right: 1rem;
+          }
+        }
+        .optionText {
+          //   text-wrap: wrap;
+          //   word-wrap: break-word;
+
+          overflow-wrap: anywhere;
+        }
+      }
+    }
+  }
+
+  .SubmitSection {
+    width: 100%;
+  }
+
+  .Submit {
+    margin: 2rem 0;
+    button {
+      color: white;
+      background-color: $navColor;
+      @include buttonDim;
+
+      &:hover {
+        background-color: lighten($color: $navColor, $amount: 10%);
+      }
+    }
+  }
+}

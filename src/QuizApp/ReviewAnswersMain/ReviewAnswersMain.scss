@@ -1,0 +1,164 @@
+@import "../config";
+
+@import "./Arrows";
+.ReviewAnswersMain {
+  position: relative;
+  padding-top: 20px;
+  width: 100%;
+  flex: 1;
+  min-width: 350px;
+  display: flex;
+  justify-content: center;
+  background-color: $dimwhite;
+  min-height: min(500px, fit-content);
+  //   min-height: 500px;
+
+  .toggleSidePanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+
+    button {
+      transform: scale(1.5);
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      &:hover {
+        background-color: rgba(black, 0.8);
+        color: white;
+      }
+    }
+  }
+
+  .ShowQuizSection {
+    width: 70%;
+    padding: 0 0.5rem;
+    min-width: 500px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Added subtle shadow
+
+    .extraButtonsSection {
+      width: 100%;
+      padding: 1rem;
+      display: flex;
+      justify-content: flex-end;
+
+      .expandAll,
+      .collapseAll {
+        margin: 0 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Added subtle shadow
+
+        button {
+          cursor: pointer;
+          padding: 0.5rem 1rem;
+          border: none;
+          border: 1px solid black;
+          border-radius: 3px;
+          background-color: transparent;
+
+          &:hover {
+            background-color: $dimwhite;
+          }
+        }
+      }
+    }
+  }
+
+  .ShowQuizSection .QuestionBox {
+    // overflow: hidden;
+    margin: 2rem auto;
+    // padding-top: 2rem;
+    width: 70%;
+
+    &_Question {
+      position: relative;
+      // background-color: $navColor;
+      border: 1px solid $dimwhite;
+      background-color: white;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      padding-right: 2rem;
+      // color: white;
+      color: black;
+      line-height: 1.5rem;
+
+      .toggleAnsBtn {
+        position: absolute;
+        right: 10px;
+        bottom: 15px;
+
+        transform: scale(1.2);
+
+        padding: 0 4px;
+
+        // color: white;
+        color: black;
+        border: none;
+        // background-color: rgba($color: white, $alpha: 0.1);
+        background-color: rgba($color: black, $alpha: 0.1);
+        // background-color: transparent;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+
+    &_Options_Container {
+      overflow: hidden;
+    }
+
+    &_Options {
+      // width: 99%;
+      margin: 0 auto;
+      //   box-sizing: border-box;
+      transform: translateY(-100%);
+      transition: all 0.3s ease-in-out;
+
+      padding: 0.5rem 0rem;
+      // color: white;
+      color: black;
+      // background-color: $dimwhite;
+      background-color: $options-bg-color;
+
+      &_Option {
+        // background-color: $wrong-ans-color;
+        background-color: white;
+        padding: 0.75rem;
+        margin: 0.5rem;
+        border-radius: 5px;
+
+        &.selected {
+          background-color: $wrong-ans-color;
+        }
+
+        &.correct {
+          background-color: $correct-ans-color;
+        }
+      }
+
+      &.visible {
+        transform: translateY(0%);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+@include media-xs-400 {
+  .ReviewAnswersMain .ShowQuizSection {
+    .extraButtonsSection {
+      padding-left: 2rem;
+      min-width: 400px;
+      justify-content: flex-start;
+    }
+  }
+}
+
+@include media-xs-900 {
+  .ReviewAnswersMain {
+    .toggleSidePanel {
+      display: block;
+    }
+  }
+}

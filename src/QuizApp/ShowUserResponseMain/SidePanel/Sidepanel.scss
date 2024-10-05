@@ -1,0 +1,83 @@
+@import "../../config";
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.sidePanel {
+  width: 200px;
+  // height: 100vh;
+  height: fit-content;
+  max-height: 500px;
+  background-color: #f4f4f4;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  transform: translateX(0);
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.userList {
+  padding: 20px;
+}
+
+.userItem {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &.active {
+    font-weight: bold;
+  }
+}
+
+.userItem:hover {
+  background-color: #e0e0e0;
+}
+
+.userQuizzes {
+  padding-left: 2rem;
+  // display: none;
+  // background-color: #ffffff;
+  // border: 1px solid #ddd;
+  border-radius: 4px;
+  // padding: 10px;
+  margin-bottom: 10px;
+}
+
+.userQuizzes ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.userQuizzes li {
+  padding: 5px 0;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(grey, 0.1);
+  }
+  &.active {
+    font-weight: bold;
+  }
+}
+
+@include media-xs-900 {
+  .sidePanel {
+    transform: translateX(-100%);
+
+    &.active {
+      transition: all 0.3s ease-in-out;
+      transform: translateX(0);
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import "../config";
+@import "../helpers";
+
+.GenerateQuizMain {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.GenerateQuizMain_Section {
+  width: 70%;
+  margin: 1rem 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //   justify-content: center;
+
+  .quizname {
+    margin: 2rem 0;
+    input {
+      width: 300px;
+      padding: 0.5rem;
+      @include inputDim;
+    }
+  }
+
+  .technologyname {
+    margin: 2rem 0;
+    select {
+      width: 320px;
+      padding: 0.5rem;
+      @include selectDim;
+    }
+  }
+
+  .generateQuiz {
+    margin: 2rem 0;
+    button {
+      color: white;
+      background-color: $navColor;
+      @include buttonDim;
+
+      &:hover {
+        background-color: lighten($color: $navColor, $amount: 10%);
+      }
+    }
+  }
+
+  .selectDeselectOptions {
+    width: 100%;
+
+    button {
+      @include buttonDim;
+      margin: 0 1rem;
+    }
+  }
+
+  .questionsList {
+    margin: 2rem 0;
+    width: 100%;
+
+    .Question {
+      display: flex;
+
+      padding: 1rem 0.5rem;
+
+      .col1 {
+        transform: scale(1.2);
+      }
+
+      input[type="checkbox"] {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

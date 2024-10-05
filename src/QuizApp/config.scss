@@ -1,0 +1,35 @@
+$navColor: rgba(20, 20, 20, 0.9);
+$dimwhite: rgb(220, 220, 220);
+$wrong-ans-color: rgba(#ba0021, 0.3);
+$correct-ans-color: rgba(green, 0.3);
+$options-bg-color: rgba(
+  $color: grey,
+  $alpha: 0.2,
+);
+
+$delete-btn-hover: rgba(red, 0.3);
+$edit-btn-hover: rgba(blue, 0.3);
+
+@mixin media-xs-500 {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin media-xs-400 {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin media-xs-900 {
+  @media screen and (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin media-xs-400-height {
+  @media screen and (max-height: 500px) {
+    @content;
+  }
+}

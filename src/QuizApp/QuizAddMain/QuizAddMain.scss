@@ -1,0 +1,55 @@
+@import "../config.scss";
+
+.QuizAddMain {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .QuizAddSection {
+    width: 70%;
+    min-width: 500px;
+
+    textarea,
+    input[type="text"] {
+      width: 100%;
+      outline: none;
+      border: 1px solid $dimwhite;
+      border-radius: 3px;
+    }
+
+    input[type="text"] {
+      margin-bottom: 10px;
+      padding: 0.5rem;
+    }
+
+    select {
+      outline: none;
+      background: none;
+      appearance: none;
+      padding: 0.5rem;
+      width: 100%;
+    }
+
+    button {
+      background: darkblue;
+      color: white;
+      cursor: pointer;
+      //   border: 1px solid blue;
+      border: none;
+      border-radius: 3px;
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+@include media-xs-500 {
+  .QuizAddMain {
+    display: block;
+
+    .QuizAddSection {
+      width: 100%;
+      min-width: 300px;
+    }
+  }
+}
