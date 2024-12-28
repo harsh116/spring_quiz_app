@@ -3,6 +3,9 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: "/spring_quiz_app",
+    // base: "/spring_quiz_app",
     plugins: [react()],
 })
+
+
+// "homepage": "https://harsh116.github.io/spring_quiz_app",
